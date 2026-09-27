@@ -1,0 +1,108 @@
+digraph cloud_services {
+    graph [
+        label="Cloud Services Topology - dk.co.io",
+        labelloc=top,
+        fontsize=20,
+        rankdir=LR,
+        compound=true
+    ];
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fontsize=11
+    ];
+
+    edge [
+        fontsize=10
+    ];
+
+    internet [
+        label="Internet",
+        shape=cloud
+    ];
+
+    firewall [
+        label="Firewall\nPorts: 80, 443",
+        shape=box
+    ];
+
+    subgraph cluster_vm {
+        label="VM: dk.co.io\nOS: Debian / Linux";
+        style="rounded,dashed";
+
+        apache [
+            label="Apache HTTP Server\nPorts: 80, 443",
+            shape=box
+        ];
+
+        app1 [
+            label="Web App: app1",
+            shape=component
+        ];
+
+        app2 [
+            label="Web App: app2",
+            shape=component
+        ];
+
+        app3 [
+            label="Web App: app3",
+            shape=component
+        ];
+    }
+
+    subgraph cluster_databases {
+        label="Databases";
+        style="rounded,dashed";
+
+        oracle [
+            label="Oracle DB\nPort: 1521",
+            shape=cylinder
+        ];
+
+        postgresql [
+            label="PostgreSQL\nPort: 5432",
+            shape=cylinder
+        ];
+
+        mariadb [
+            label="MariaDB\nPort: 3306",
+            shape=cylinder
+        ];
+    }
+
+    internet -> firewall [
+        label="HTTPS / HTTP"
+    ];
+
+    firewall -> apache [
+        label="80, 443",
+        lhead=cluster_vm
+    ];
+
+    apache -> app1 [
+        label="/app1"
+    ];
+
+    apache -> app2 [
+        label="/app2"
+    ];
+
+    apache -> app3 [
+        label="/app3"
+    ];
+
+    app1 -> oracle [
+        label="SQL / 1521"
+    ];
+
+    app2 -> postgresql [
+        label="SQL / 5432"
+    ];
+
+    app3 -> mariadb [
+        label="SQL / 3306"
+    ];
+}
+

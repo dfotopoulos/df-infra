@@ -1,0 +1,89 @@
+provider: public_vps_inventory
+description: Public VPS infrastructure inventory for diagram generation.
+sensitivity: public
+notes:
+    - VNC endpoints, admin ports, credentials, tokens, and private keys are
+      excluded.
+    - IPv6 addresses are not documented in the current public inventory.
+servers:
+    - id: ro-hub-europe-001
+      server_name: Romania
+      public_ipv4: 157.173.127.220
+      public_ipv6: null
+      location: Romania
+      host_system_id: null
+      os: Arch Linux
+      vps_plan: Hub Europe
+      documented_services: []
+    - id: pl-hub-europe-001
+      server_name: Poland
+      public_ipv4: 213.199.38.135
+      public_ipv6: null
+      location: Poland
+      host_system_id: null
+      os: Debian 13 Trixie
+      vps_plan: Hub Europe
+      documented_services: []
+    - id: dk-hub-europe-001
+      server_name: Denmark
+      public_ipv4: 95.111.236.11
+      public_ipv6: null
+      location: Denmark
+      host_system_id: null
+      os: Arch Linux
+      vps_plan: Hub Europe
+      documented_services: []
+    - id: cz-hub-europe-001
+      server_name: Czech
+      public_ipv4: 158.220.114.68
+      public_ipv6: null
+      location: Czech Republic
+      host_system_id: null
+      os: Arch Linux
+      vps_plan: Hub Europe
+      documented_services: []
+    - id: nl-hub-europe-001
+      server_name: Netherlands
+      public_ipv4: 85.208.51.73
+      public_ipv6: null
+      location: Netherlands
+      host_system_id: null
+      os: Arch Linux
+      vps_plan: Hub Europe
+      documented_services: []
+    - id: de-hub-europe-001
+      server_name: Germany
+      public_ipv4: 158.220.98.11
+      public_ipv6: null
+      location: Germany
+      host_system_id: null
+      os: Debian 12
+      vps_plan: Hub Europe
+      documented_services: []
+    - id: fi-karlsruhe-001
+      server_name: Finland
+      public_ipv4: 45.136.17.165
+      public_ipv6: null
+      location: Finland
+      host_system_id: null
+      os: Rocky Linux 9
+      vps_plan: Karlsruhe
+      documented_services: []
+    - id: no-hub-europe-001
+      server_name: Norway
+      public_ipv4: 176.57.184.69
+      public_ipv6: null
+      location: Norway
+      host_system_id: null
+      os: OS installed by customer
+      vps_plan: Hub Europe
+      documented_services: []
+    - id: se-hub-europe-001
+      server_name: Sweden
+      public_ipv4: 176.57.150.81
+      public_ipv6: null
+      location: Sweden
+      host_system_id: null
+      os: Debian 12
+      vps_plan: Hub Europe
+      documented_services: []

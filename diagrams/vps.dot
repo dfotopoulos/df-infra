@@ -1,0 +1,117 @@
+digraph vps_inventory {
+    graph [
+        label="Public VPS Inventory",
+        labelloc=top,
+        fontsize=22,
+        rankdir=LR,
+        compound=true,
+        splines=polyline,
+        nodesep=0.45,
+        ranksep=0.7
+    ];
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fillcolor="#f8fafc",
+        color="#475569",
+        fontname="Arial",
+        fontsize=10,
+        margin="0.08,0.06"
+    ];
+
+    edge [
+        color="#64748b",
+        fontname="Arial",
+        fontsize=9
+    ];
+
+    internet [
+        label="Internet",
+        shape=oval,
+        fillcolor="#e0f2fe",
+        color="#0369a1"
+    ];
+
+    public_ipv4 [
+        label="Public IPv4\ninventory only",
+        shape=box,
+        fillcolor="#ecfeff",
+        color="#0891b2"
+    ];
+
+    internet -> public_ipv4 [
+        label="public routing"
+    ];
+
+    subgraph cluster_hub_europe {
+        label="VPS Plan / Group: Hub Europe";
+        style="rounded,dashed";
+        color="#94a3b8";
+        fontname="Arial";
+        fontsize=14;
+
+        ro_hub_europe_001 [
+            label="{Romania|IPv4: 157.173.127.220|IPv6: not documented|Location: Romania|Host system ID: not documented|OS: Arch Linux|Services: not documented}",
+            shape=record
+        ];
+
+        pl_hub_europe_001 [
+            label="{Poland|IPv4: 213.199.38.135|IPv6: not documented|Location: Poland|Host system ID: not documented|OS: Debian 13 Trixie|Services: not documented}",
+            shape=record
+        ];
+
+        dk_hub_europe_001 [
+            label="{Denmark|IPv4: 95.111.236.11|IPv6: not documented|Location: Denmark|Host system ID: not documented|OS: Arch Linux|Services: not documented}",
+            shape=record
+        ];
+
+        cz_hub_europe_001 [
+            label="{Czech|IPv4: 158.220.114.68|IPv6: not documented|Location: Czech Republic|Host system ID: not documented|OS: Arch Linux|Services: not documented}",
+            shape=record
+        ];
+
+        nl_hub_europe_001 [
+            label="{Netherlands|IPv4: 85.208.51.73|IPv6: not documented|Location: Netherlands|Host system ID: not documented|OS: Arch Linux|Services: not documented}",
+            shape=record
+        ];
+
+        de_hub_europe_001 [
+            label="{Germany|IPv4: 158.220.98.11|IPv6: not documented|Location: Germany|Host system ID: not documented|OS: Debian 12|Services: not documented}",
+            shape=record
+        ];
+
+        no_hub_europe_001 [
+            label="{Norway|IPv4: 176.57.184.69|IPv6: not documented|Location: Norway|Host system ID: not documented|OS: OS installed by customer|Services: not documented}",
+            shape=record
+        ];
+
+        se_hub_europe_001 [
+            label="{Sweden|IPv4: 176.57.150.81|IPv6: not documented|Location: Sweden|Host system ID: not documented|OS: Debian 12|Services: not documented}",
+            shape=record
+        ];
+    }
+
+    subgraph cluster_karlsruhe {
+        label="VPS Plan / Group: Karlsruhe";
+        style="rounded,dashed";
+        color="#94a3b8";
+        fontname="Arial";
+        fontsize=14;
+
+        fi_karlsruhe_001 [
+            label="{Finland|IPv4: 45.136.17.165|IPv6: not documented|Location: Finland|Host system ID: not documented|OS: Rocky Linux 9|Services: not documented}",
+            shape=record
+        ];
+    }
+
+    public_ipv4 -> ro_hub_europe_001;
+    public_ipv4 -> pl_hub_europe_001;
+    public_ipv4 -> dk_hub_europe_001;
+    public_ipv4 -> cz_hub_europe_001;
+    public_ipv4 -> nl_hub_europe_001;
+    public_ipv4 -> de_hub_europe_001;
+    public_ipv4 -> no_hub_europe_001;
+    public_ipv4 -> se_hub_europe_001;
+    public_ipv4 -> fi_karlsruhe_001;
+}
